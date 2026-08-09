@@ -93,3 +93,19 @@ hr {
     font-size: 0.85rem;
   }
 }
+footer {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} 
+footer p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+footer p a {
+  color: var(--muted)
+}
