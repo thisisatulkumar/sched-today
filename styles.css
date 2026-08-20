@@ -57,6 +57,29 @@ body {
   color: var(--text);
   margin-bottom: 12px;
 }
+.branchSelect {
+  display: block;
+  width: 120px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 16px) 50%,
+    calc(100% - 11px) 50%;
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  appearance: none;
+  -webkit-appearance: none;
+}
 h1 {
   font-size: 0.9rem;
   font-weight: 600;
@@ -93,6 +116,14 @@ hr {
     font-size: 0.85rem;
   }
 }
+.openPullReq {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+}
+.openPullReq a {
+  color: var(--muted);
+}
 footer {
   width: 100vw;
   position: absolute;
@@ -101,11 +132,11 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-} 
+}
 footer p {
   margin: 0;
   margin-bottom: 5px;
 }
 footer p a {
-  color: var(--muted)
+  color: var(--muted);
 }

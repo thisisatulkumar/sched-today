@@ -47,7 +47,7 @@ const MESS_MENU = {
   },
 };
 
-// chore: add other branches
+// chore: add teacher name and timings of periods in future
 const TIME_TABLE = {
   "CSE-R": {
     Monday: [
@@ -68,7 +68,15 @@ const TIME_TABLE = {
       "Mini Proj/DLCO (L)",
       "DSA",
     ],
-    Wednesday: ["Counseling", "Counseling", "Maths", "Maths", "UHV", "UHV", "CSS"],
+    Wednesday: [
+      "Counseling",
+      "Counseling",
+      "Maths",
+      "Maths",
+      "UHV",
+      "UHV",
+      "CSS",
+    ],
     Thursday: [
       "DLCO",
       "DLCO",
@@ -90,15 +98,78 @@ const TIME_TABLE = {
     Saturday: ["", "CSS", "DLCO", "DLCO", "Research", "Research", ""],
     Sunday: ["", "", "", "", "", "", ""],
   },
+  "CSE-AI": {
+    Monday: ["", "", "", "", "", "", ""],
+    Tuesday: ["", "", "", "", "", "", ""],
+    Wednesday: ["", "", "", "", "", "", ""],
+    Thursday: ["", "", "", "", "", "", ""],
+    Friday: ["", "", "", "", "", "", ""],
+    Saturday: ["", "", "", "", "", "", ""],
+    Sunday: ["", "", "", "", "", "", ""],
+  },
+  "CSE-SF": {
+    Monday: ["", "", "", "", "", "", ""],
+    Tuesday: ["", "", "", "", "", "", ""],
+    Wednesday: ["", "", "", "", "", "", ""],
+    Thursday: ["", "", "", "", "", "", ""],
+    Friday: ["", "", "", "", "", "", ""],
+    Saturday: ["", "", "", "", "", "", ""],
+    Sunday: ["", "", "", "", "", "", ""],
+  },
+  ECE: {
+    Monday: ["", "", "", "", "", "", ""],
+    Tuesday: ["", "", "", "", "", "", ""],
+    Wednesday: ["", "", "", "", "", "", ""],
+    Thursday: ["", "", "", "", "", "", ""],
+    Friday: ["", "", "", "", "", "", ""],
+    Saturday: ["", "", "", "", "", "", ""],
+    Sunday: ["", "", "", "", "", "", ""],
+  },
+  EE: {
+    Monday: ["", "", "", "", "", "", ""],
+    Tuesday: ["", "", "", "", "", "", ""],
+    Wednesday: ["", "", "", "", "", "", ""],
+    Thursday: ["", "", "", "", "", "", ""],
+    Friday: ["", "", "", "", "", "", ""],
+    Saturday: ["", "", "", "", "", "", ""],
+    Sunday: ["", "", "", "", "", "", ""],
+  },
+  ME: {
+    Monday: ["", "", "", "", "", "", ""],
+    Tuesday: ["", "", "", "", "", "", ""],
+    Wednesday: ["", "", "", "", "", "", ""],
+    Thursday: ["", "", "", "", "", "", ""],
+    Friday: ["", "", "", "", "", "", ""],
+    Saturday: ["", "", "", "", "", "", ""],
+    Sunday: ["", "", "", "", "", "", ""],
+  },
+  CE: {
+    Monday: ["", "", "", "", "", "", ""],
+    Tuesday: ["", "", "", "", "", "", ""],
+    Wednesday: ["", "", "", "", "", "", ""],
+    Thursday: ["", "", "", "", "", "", ""],
+    Friday: ["", "", "", "", "", "", ""],
+    Saturday: ["", "", "", "", "", "", ""],
+    Sunday: ["", "", "", "", "", "", ""],
+  },
+  CHE: {
+    Monday: ["", "", "", "", "", "", ""],
+    Tuesday: ["", "", "", "", "", "", ""],
+    Wednesday: ["", "", "", "", "", "", ""],
+    Thursday: ["", "", "", "", "", "", ""],
+    Friday: ["", "", "", "", "", "", ""],
+    Saturday: ["", "", "", "", "", "", ""],
+    Sunday: ["", "", "", "", "", "", ""],
+  },
 };
 
 // in future, if u release this for the public, add a field for choosing section and store it all in localStorage
 // in future, add more metadata like timings of periods, teacher name, sections, etc.
-// make it a PWA
 
 const currDayContainer = document.querySelector(".currDay");
 const prevDayBtn = document.querySelector(".prevDay");
 const nextDayBtn = document.querySelector(".nextDay");
+const branchSelect = document.querySelector(".branchSelect");
 const messMenuContainer = document.querySelector(".messMenu");
 const timeTableContainer = document.querySelector(".timeTable");
 
@@ -106,7 +177,7 @@ const today = new Date();
 const day = today.getDay();
 
 let currDay = day;
-let currBranch = "CSE-R";
+let currBranch = localStorage.getItem("branch") || "CSE-R";
 
 const renderDay = (day) => {
   currDayContainer.innerHTML = `<strong>${DAYS[day]}</strong>`;
@@ -146,6 +217,11 @@ const renderTimeTable = (day) => {
     if (i == 4) html += "<hr>";
   }
 
+  if (TIME_TABLE[currBranch][DAYS[1]].every((period) => period === "")) {
+    html +=
+      "<strong class='openPullReq'><a href='https://github.com/thisisatulkumar/sched-today'>Open a pull request</a> to add your branch's time table</strong>";
+  }
+
   timeTableContainer.innerHTML = html;
 };
 
@@ -162,6 +238,12 @@ prevDayBtn.addEventListener("click", () => {
 nextDayBtn.addEventListener("click", () => {
   currDay = getNextDay(currDay);
   renderData(currDay);
+});
+branchSelect.addEventListener("change", (e) => {
+  currBranch = e.target.value;
+  renderData(currDay);
+
+  localStorage.setItem("branch", currBranch);
 });
 
 renderData(currDay);
