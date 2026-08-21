@@ -64,8 +64,8 @@ const TIME_TABLE = {
       "DLCO",
       "DSTL",
       "DSTL",
-      "Mini Proj/DLCO (L)",
-      "Mini Proj/DLCO (L)",
+      "Mini Proj/Mini Proj (L)",
+      "Mini Proj/Mini Proj (L)",
       "DSA",
     ],
     Wednesday: [
@@ -87,8 +87,8 @@ const TIME_TABLE = {
       "UHV",
     ],
     Friday: [
-      "IT Tools/Mini Proj (L)",
-      "IT Tools/Mini Proj (L)",
+      "IT Tools/--- (L)",
+      "IT Tools/--- (L)",
       "DSTL",
       "DSTL",
       "Maths",
