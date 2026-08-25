@@ -47,6 +47,16 @@ const MESS_MENU = {
   },
 };
 
+const CLASS_TIMINGS = [
+  "09:10 AM - 10:00 AM",
+  "10:00 AM - 10:50 AM",
+  "10:50 AM - 11:40 AM",
+  "11:40 AM - 12:30 PM",
+  "02:00 PM - 02:50 PM",
+  "02:50 PM - 03:40 PM",
+  "03:40 PM - 04:30 PM",
+];
+
 // chore: add teacher name and timings of periods in future
 const TIME_TABLE = {
   "CSE-R": {
@@ -212,7 +222,7 @@ const renderTimeTable = (day) => {
 
   let html = "";
   for (let i = 1; i <= 7; i++) {
-    html += `<strong>${i}: </strong> ${timeTable[i - 1]} <br>`;
+    html += `<strong>[${CLASS_TIMINGS[i - 1]}] ${i}: </strong> ${timeTable[i - 1]} <br>`;
 
     if (i == 4) html += "<hr>";
   }
