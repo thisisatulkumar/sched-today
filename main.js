@@ -57,7 +57,7 @@ const CLASS_TIMINGS = [
   "03:40 PM - 04:30 PM",
 ];
 
-// chore: add teacher name and timings of periods in future
+// chore: add teacher name
 const TIME_TABLE = {
   "CSE-R": {
     Monday: [
@@ -74,8 +74,8 @@ const TIME_TABLE = {
       "DLCO",
       "DSTL",
       "DSTL",
-      "Mini Proj/Mini Proj (L)",
-      "Mini Proj/Mini Proj (L)",
+      "Mini Proj/DLCO (L)",
+      "Mini Proj/DLCO (L)",
       "DSA",
     ],
     Wednesday: [
@@ -94,18 +94,18 @@ const TIME_TABLE = {
       "DSA/IT Tools (L)",
       "DSA",
       "DSA",
-      "UHV",
+      "",
     ],
     Friday: [
-      "IT Tools/--- (L)",
-      "IT Tools/--- (L)",
+      "IT Tools/Mini Proj (L)",
+      "IT Tools/Mini Proj (L)",
       "DSTL",
       "DSTL",
       "Maths",
       "Maths",
       "",
     ],
-    Saturday: ["", "CSS", "DLCO", "DLCO", "Research", "Research", ""],
+    Saturday: ["UHV", "CSS", "DLCO", "DLCO", "Research", "Research", ""],
     Sunday: ["", "", "", "", "", "", ""],
   },
   "CSE-AI": {
@@ -174,7 +174,7 @@ const TIME_TABLE = {
 };
 
 // in future, if u release this for the public, add a field for choosing section and store it all in localStorage
-// in future, add more metadata like timings of periods, teacher name, sections, etc.
+// in future, add more metadata like teacher name, sections, etc.
 
 const currDayContainer = document.querySelector(".currDay");
 const prevDayBtn = document.querySelector(".prevDay");
