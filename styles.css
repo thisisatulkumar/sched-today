@@ -1,0 +1,142 @@
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #6b6b6b;
+  --line: #e8e8e8;
+  --max-width: 720px;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+  padding: 36px 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+}
+.dayCarousel {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.prevDays,
+.nextDays {
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.currDay {
+  text-align: center;
+  flex: 1 1 auto;
+}
+.currDay {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.branchSelect {
+  display: block;
+  width: 120px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 16px) 50%,
+    calc(100% - 11px) 50%;
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+h1 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 18px 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.messMenu,
+.timeTable {
+  padding: 12px 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.messMenu strong,
+.timeTable strong {
+  color: var(--text);
+  font-weight: 600;
+}
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--line);
+  margin: 8px 0;
+}
+@media (max-width: 420px) {
+  body {
+    padding: 20px 12px;
+  }
+  .currDay {
+    font-size: 1.1rem;
+  }
+  h1 {
+    font-size: 0.85rem;
+  }
+}
+.openPullReq {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+}
+.openPullReq a {
+  color: var(--muted);
+}
+footer {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+footer p a {
+  color: var(--muted);
+}
